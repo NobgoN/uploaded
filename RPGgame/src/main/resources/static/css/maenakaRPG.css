@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Kosugi Maru', sans-serif;
+   
+}
+
+a {
+    text-decoration-style: double;
+    color: white; 
+}
+
+.a1{
+	color: white;
+}
+
+body {
+    background-color: black;
+}
+
+#gameViewPos {
+  /* 水平・垂直方向の中央揃え */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+    background-color: antiquewhite;
+    font-size: 24px;
+}
+
+button:hover {
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.container{
+	display:flex
+}
+
+.box1{
+    width: 900px;
+}
+
+.box2{
+    width: calc(100% - 30%);
+}
+.box {
+  margin         : auto;                 /* サンプル用 中央寄せ */
+  display        : flex;                 /* FlexBox定義         */
+  flex-wrap      : nowrap;             /* 折り返し定義        */
+}
+
+.info{
+	color:white
+}

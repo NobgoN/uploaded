@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}" >
+<title>User Registration</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+<main class = "main">
+  <form class="form" th:action="@{/user/registration}" method="post" th:object="${form}">
+    <h1 class="form__title">アカウント登録</h1>
+    <p th:if="${#fields.hasErrors('passwordValid')}" th:errors="*{passwordValid}" class="error-message"></p>
+    <p class="form__item">
+        <label for="username">ユーザー名</label>
+        <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="error-message"></span>
+        <input type="text" placeholder="ユーザー名を入力してください" name="username" id="username">
+    </p>
+    <p class="form__item">
+        <label for="password">パスワード</label>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="error-message"></span>
+        <input type="password" placeholder="パスワードを入力してください" name="password" id="password">
+    </p>
+    <p class="form__item">
+        <label for="confirm-password">パスワード確認</label>
+        <span th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}" class="error-message"></span>
+        <input type="password" placeholder="パスワードを再度入力してください" name="confirmPassword" id="confirm-password">
+    </p>
+    <p class="form__item">
+        <input class="btn" type="submit" value="アカウント登録">
+    </p>
+</form>
+<a href="/login" th:href="@{/login}" class="to-login">トップページ</a>
+</main>
+
+<script type="text/javascript">
+
+$('.btn').click(function(){
+		$(this).prop('disabled', true);
+		$(this).closest('form').submit();
+})
+</script>
+</body>
+</html>

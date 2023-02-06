@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+body{
+	
+	background-image: url("../img/forest.jpg");
+	
+}  
+
+.img1{
+  display: flex;
+  justify-content: space-around;
+	
+}
+
+span{
+	color:white;
+}
+
+h1{
+	text-align:center;
+	font-size: 48px;
+	color:white;
+}
+h2{
+	text-align : center;
+	font-size : 30px;
+	color:white;
+}
+
+header {
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  padding: 30px;
+	  margin: 0 auto;
+	  text-align: center;
+	  background-color:black;
+	  
+}
+
+main {
+	padding: 200px 50px;
+}

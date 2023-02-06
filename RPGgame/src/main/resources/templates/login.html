@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<title>Login</title>
+</head>
+<body>
+	
+	<main class="main">
+    	<form class="form" th:action="@{/login}" method="post">
+	    	<div class="container">
+				<div class="animate one">
+					<span>L</span><span>o</span><span>g</span><span>i</span><span>n</span>
+				</div>
+			</div>
+    		<!-- エラー処理　Param.errorでerrorという名前のリクエストパラメータが返ってくる -->
+    		<div th:if="${param.error}">
+    			<!-- 認証失敗時に発生した例外オブジェクトがリダイレクトされた際にセッションに格納され
+    				　SPRING＿SECURITY＿LAST＿EXCEPTION属性のオブジェクトを呼び出しエラーメッセージを出力 -->
+    			<p th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null}">
+    				<span th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}" class="error-message"></span>
+    			</p>
+    		</div>
+    		<p class="form__item">
+    			<label for="username">ユーザー名</label>
+    			<input type="text" placeholder="ユーザー名を入力してください" name="username" id="username">
+    		</p>
+    		<p class="form__item">
+    			<label for="password">パスワード</label>
+    			<input type="password" placeholder="パスワードを入力してください" name="password" id="password">
+    		</p>
+    		<p class="form__item">
+    			<input type="submit" value="ログイン">
+    		</p>
+    		<a href="/user/registration" th:href="@{/user/registration}" class="to-user-registration">新規登録</a>
+    	</form>
+	</main>
+</body>
+</html>

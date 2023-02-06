@@ -1,0 +1,22 @@
+動作環境
+Xamppの
+Apache Server version: Apache/2.4.54 (Win64)
+Apache Lounge VS16 Server built:   Jun 22 2022 09:58:15,
+
+Mysql Ver 15.1 Distrib 10.4.27-MariaDB, for Win64 (AMD64)を使用
+
+MYSQL接続後以下のSQL文を実行
+--------------------------
+CREATE DATABASE game CHARACTER SET utf8;
+USE game;
+CREATE TABLE account(id SERIAL PRIMARY KEY, username varchar(10), password varchar(60), rolename varchar(10));
+CREATE TABLE characters(characterID int PRIMARY KEY AUTO_INCREMENT, level int, hp int, mp int, atk int, def int, agi int, exp int, username varchar(20));
+CREATE TABLE monsters(monsterID int  PRIMARY KEY AUTO_INCREMENT, name varchar(8) not null, hp int, mp int, atk int, def int, agi int, exp int);
+INSERT INTO monsters(monsterID,name,hp,mp,atk,def,agi,exp) values(null,'スライム',10,2,5,5,5,10);
+INSERT INTO monsters(monsterID,name,hp,mp,atk,def,agi,exp) values(null,'ゴブリン',15,0,10,7,5,20);
+INSERT INTO monsters(monsterID,name,hp,mp,atk,def,agi,exp) values(null,'オーク',25,10,15,10,3,40);
+INSERT INTO monsters(monsterID,name,hp,mp,atk,def,agi,exp) values(null,'コウモリ',20,15,8,5,10,30);
+INSERT INTO monsters(monsterID,name,hp,mp,atk,def,agi,exp) values(null,'ドラゴン',50,30,35,25,20,150);
+-------------------------
+
+RPGgame/src/main/resources/application.propertiesにてDB接続設定を記述

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+.title {
+    width: 300px;
+    margin: 3px auto 30px;
+}
+
+h1 {
+    border-bottom: solid 1px #7053c4;
+}
+
+form {
+    margin: auto;
+    width: 700px;
+}
+
+.user_title,
+.pass_title {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.user,
+.pass {
+    background: transparent;
+    border-bottom: solid 1px #7053c4;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px;
+    margin: 0px 30px 30px 30px;
+    width: 600px;
+    height: 20px;
+}
+
+.user:focus,
+.pass:focus {
+    background-color: aliceblue;
+    transform: scale3d(1.2, 1.2, 1.2);
+
+}
+
+.submit,
+.clear {
+    margin-top: 30px;
+    background: transparent;
+    width: 120px;
+    height: 30px;
+    border: solid 2px #7053c4;
+}
+
+.submit:hover,
+.clear:hover {
+    width: 150px;
+    height: 40px;
+    border: solid 3px #7053c4;
+    cursor: pointer;
+}
